@@ -1,0 +1,117 @@
+.home {
+  /* border: 1px solid #ccc; */
+  /* width: auto; */
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+}
+
+.home__welcome {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f7f7fa;
+}
+
+.home__head {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.home__text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: rgb(128, 125, 125);
+}
+
+.home__options {
+  display: flex;
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* border: 1px solid red; */
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.home__sec {
+  flex: 1;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__step1 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7985cb;
+  border-radius: 16px;
+}
+
+.home__step2 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #33a9a9;
+  border-radius: 16px;
+}
+
+.home__step3 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6655a;
+  border-radius: 16px;
+}
+
+.home__step4 {
+  width: 104px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8e6ff;
+  border-radius: 16px;
+}
+
+.home__sec > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.home__sec > img:hover {
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home__sec > p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgb(87, 85, 85);
+}
+
+.home__getStart {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: #ededf0;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.home__arrow {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+}

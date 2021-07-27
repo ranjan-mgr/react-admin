@@ -1,0 +1,51 @@
+.customizeApp {
+  background: #f7f7fa;
+  /* padding: 10px; */
+  display: flex;
+  flex: 1;
+}
+
+.customizeApp__left {
+  flex: 0.25;
+  padding: 10px;
+  border-right: 1px solid #d2d2d6;
+}
+
+.customizeApp__right {
+  flex: 0.75;
+  padding: 10px;
+}
+
+.customizeApp__expand {
+  padding: 10px;
+}
+
+.customizeApp__head {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.customizeApp__head > p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.customizeApp__expandOptions {
+  /* margin-left: 20px; */
+  /* margin-right: 20px; */
+  margin-top: 10px;
+}
+
+.customizeApp__expandOptions > p {
+  font-size: 14px;
+  padding: 5px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.customizeApp__select {
+  background: #2264d1;
+  color: #fff;
+}

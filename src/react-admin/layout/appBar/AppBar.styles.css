@@ -1,0 +1,15 @@
+.appBar {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  background-color: #fff;
+}
+
+.appBar__left {
+  flex: 0.9;
+  /* border: 1px solid red; */
+}
+
+.appBar__right {
+  flex: 0.1;
+}

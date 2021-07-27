@@ -1,0 +1,51 @@
+.baseTheme {
+  padding: 10px;
+}
+
+.baseTheme__checkbox {
+  margin-top: 25px;
+}
+
+.baseTheme__select {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.baseTheme__dropdown {
+  flex: 0.5;
+  z-index: 999;
+}
+
+.baseTheme__links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.baseTheme__linkText > p {
+  margin: 10px;
+  color: #5a5b6a;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.baseTheme__linkText > p:hover {
+  text-decoration: underline;
+}
+
+.baseTheme__linkText {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.baseTheme__swiper {
+  margin-top: 10px;
+}
+
+.baseTheme__continue {
+  background: #ededf0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}

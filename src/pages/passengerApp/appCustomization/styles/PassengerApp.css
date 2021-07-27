@@ -1,0 +1,34 @@
+.passengerApp {
+  padding: 20px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.passengerApp__tabs {
+  margin-top: 30px;
+}
+
+.passengerApp__left {
+  flex: 0.9;
+}
+
+.passengerApp__right {
+  flex: 0.1;
+}
+
+.passengerApp__pageTips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background: #fff9ef;
+  cursor: pointer;
+}
+
+.passengerApp__pageTips > p {
+  font-size: 10px;
+  color: #19191d;
+  font-weight: bold;
+}

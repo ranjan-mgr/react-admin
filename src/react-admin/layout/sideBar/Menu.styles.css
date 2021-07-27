@@ -1,0 +1,42 @@
+.menu {
+  /* padding: 15px; */
+  background-color: #f5f8ff;
+  /* transition: 0.5s;
+  transition-property: menuItem__head; */
+  /* overflow-y: scroll; */
+  /* min-height: 92vh; */
+}
+
+.menuItem {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.menuItem__head {
+  margin-left: 15px;
+  color: #787885;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.menuItem__option {
+  /* margin-top: 10px; */
+}
+
+/* Scroll bar */
+
+/* ::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+} */
