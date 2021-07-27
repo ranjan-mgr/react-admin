@@ -6,7 +6,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-const CustomSwiper = ({ screenPrev = [], value }) => {
+const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
   const styles = {
     swiper: {
       background: "#D9D9E6",
@@ -44,7 +44,11 @@ const CustomSwiper = ({ screenPrev = [], value }) => {
         {screenPrev.map((data, i) => (
           <SwiperSlide key={i} style={styles.swiper}>
             <div style={styles.images}>
-              <CircularProgress size={20} style={{ color: "#3A3A44" }} />
+              {selectedOption !== "" ? (
+                <CircularProgress size={20} style={{ color: "#3A3A44" }} />
+              ) : (
+                ""
+              )}
             </div>
           </SwiperSlide>
         ))}

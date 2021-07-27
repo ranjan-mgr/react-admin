@@ -1,12 +1,7 @@
 import React from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 
-const CustomCheckBox = ({ title }) => {
-  const [checked, setChecked] = React.useState(true);
-
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
+const CustomCheckBox = ({ title, checked, handleCheck }) => {
   return (
     <div
       style={{
@@ -18,7 +13,7 @@ const CustomCheckBox = ({ title }) => {
     >
       <Checkbox
         checked={checked}
-        onChange={handleChange}
+        onChange={handleCheck}
         inputProps={{ "aria-label": "primary checkbox" }}
         style={{ color: "#2264D1" }}
       />

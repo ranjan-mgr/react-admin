@@ -7,14 +7,38 @@
 
 .passengerApp__tabs {
   margin-top: 30px;
+  width: 110%;
+  transition: 0.4s;
+  transition-property: width;
+}
+
+.reduce {
+  width: 98%;
 }
 
 .passengerApp__left {
   flex: 0.9;
+  transition: 0.4s;
+  transition-property: flex;
+}
+
+.flex-reduce {
+  flex: 0.8;
 }
 
 .passengerApp__right {
   flex: 0.1;
+  border: 1px solid #faedd9;
+  border-radius: 8px;
+  transition: 0.4s;
+  transition-property: flex, height;
+  height: 40px;
+  background: #fff9ef;
+}
+
+.expand {
+  flex: 0.2;
+  height: 100%;
 }
 
 .passengerApp__pageTips {
@@ -22,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff9ef;
   cursor: pointer;
 }

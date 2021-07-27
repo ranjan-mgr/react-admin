@@ -12,6 +12,11 @@
   justify-content: space-between;
 }
 
+.disable {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
 .baseTheme__dropdown {
   flex: 0.5;
   z-index: 999;
