@@ -4,13 +4,32 @@ import TabSection from "../../../components/customTabs/CustomTabs";
 import CustomizeAppSec from "./CustomizeAppSec";
 import ReviewSec from "./ReviewSec";
 import PublishSec from "./PublishSec";
-import { PageTipIcon, PageTipLeftIcon } from "../../../assets/icons/icon";
+import {
+  PageTipIcon,
+  PageTipLeftIcon,
+  PageTipShowIcon,
+} from "../../../assets/icons/icon";
+import Accordion from "../../../components/customAccordion/PageTipsAccordion";
+import { useToasts } from "react-toast-notifications";
+
+const mobileAppData = [
+  "Select app base version",
+  "Add app icon, assets for login",
+  "Select app theme",
+  "Add app contact details",
+  "Add booking and cancelation policies",
+  "Review app features",
+  "Review payment features",
+  "Review app language and currency",
+];
 
 const PassengerApp = () => {
   const [pageTip, setPageTip] = useState(false);
+  const { addToast } = useToasts();
 
   const onClickPageTip = () => {
     setPageTip(!pageTip);
+    // addToast("Failed to load", { appearance: "success" });
   };
 
   return (
@@ -31,10 +50,28 @@ const PassengerApp = () => {
           className="passengerApp__pageTips"
           onClick={() => onClickPageTip()}
         >
-          <PageTipIcon />
-          <p>Page Tips</p>
-          <PageTipLeftIcon />
+          <div className="passengerApp__pageTipsSec">
+            <PageTipIcon />
+            <p>Page Tips</p>
+          </div>
+
+          {pageTip ? <PageTipShowIcon /> : <PageTipLeftIcon />}
         </div>
+        {pageTip ? (
+          <div className="passengerApp__accordion">
+            <Accordion
+              title={"Customize mobile app"}
+              data={mobileAppData}
+              expanded={true}
+            />
+            <Accordion title={"Review & Confirm"} data={[]} expanded={false} />
+            <Accordion
+              title={"Download to Publish"}
+              data={[]}
+              expanded={false}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -9,8 +9,13 @@ import {
   DownloadLogo,
 } from "../../../assets/icons/icon";
 import { IoIosArrowForward } from "react-icons/io";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
+  const data = useSelector((state) => state.data.test);
+  // const dispatch = useDispatch();
+  // dispatch({ type: "CREATE", payload: "abc" });
+  console.log("Data from redux", data);
   return (
     <div className="home">
       <Title title={"Passenger App"} />
