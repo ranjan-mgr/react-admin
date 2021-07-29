@@ -42,7 +42,7 @@ const screenPrev = [
   },
 ];
 
-const ChooseBaseScreen = () => {
+const ChooseBaseTheme = () => {
   const [selectedOptionAndroid, setSelectedOptionsAndroid] = useState("");
   const [selectedOptionIos, setSelectedOptionsIos] = useState("");
   const [selectedOptionWeb, setSelectedOptionsWeb] = useState("");
@@ -160,4 +160,4 @@ const ChooseBaseScreen = () => {
   );
 };
 
-export default ChooseBaseScreen;
+export default ChooseBaseTheme;

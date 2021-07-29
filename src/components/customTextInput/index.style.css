@@ -1,0 +1,13 @@
+.textInput {
+  /* margin: 10px; */
+}
+
+.textInput__input {
+  background: #fff;
+  outline: none;
+  border: none;
+  padding: 10px;
+  box-shadow: 0px 1px 2px rgba(58, 58, 68, 0.24),
+    0px 2px 4px rgba(90, 91, 106, 0.24);
+  border-radius: 4px;
+}

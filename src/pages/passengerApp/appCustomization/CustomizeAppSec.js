@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./styles/CustomizeApp.css";
 import Accordion from "../../../components/customAccordion/Accordion";
-import ChooseBaseTheme from "./designSettings/ChooseBaseScreen";
-import LoginScreen from "./designSettings/LoginScreen";
+import ChooseBaseTheme from "./designSettings/ChooseBaseTheme";
+import AppLogin from "./designSettings/AppLogin";
 import AppTheme from "./designSettings/AppTheme";
 import ConfigureURLs from "./designSettings/ConfigureURLs";
 import Policies from "./designSettings/Policies";
@@ -50,7 +50,7 @@ const CustomizeAppSec = () => {
       case "Choose Base Theme":
         return <ChooseBaseTheme />;
       case "Login":
-        return <LoginScreen />;
+        return <AppLogin />;
       case "App Theme":
         return <AppTheme />;
       case "Configure URLs":

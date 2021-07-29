@@ -1,0 +1,59 @@
+.picker {
+  /* border: 1px solid red; */
+  width: 120px;
+  height: 120px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+}
+
+.picker__inputFile {
+  display: none;
+}
+
+.picker__add {
+  text-align: center;
+  /* border: 1px solid blue; */
+  padding: 0px;
+  cursor: pointer;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.picker__add {
+  font-size: 14px;
+  color: #2979ff;
+  width: 100%;
+}
+
+.picker__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.picker__showImage {
+  position: relative;
+  display: flex;
+}
+
+.picker__remove {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+  background: red;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.centerCloseIcon {
+  top: 25px;
+  left: 25px;
+}

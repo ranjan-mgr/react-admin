@@ -1,0 +1,90 @@
+.appLogin {
+  padding: 20px;
+}
+
+.appLogin__brand {
+  margin-top: 20px;
+}
+
+.appLogin__head {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.022em;
+}
+
+.appLogin__text {
+  font-size: 12px;
+  color: #787885;
+  margin-top: 5px;
+}
+
+.appLogin__picker {
+  margin-top: 20px;
+}
+
+.appLogin__appIcon {
+  margin-top: 50px;
+}
+
+.appLogin__addApp {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.appLogin__android > p {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #5a5b6a;
+}
+
+.appLogin__ios > p {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #5a5b6a;
+}
+
+.appLogin__nameApp {
+  margin-top: 50px;
+}
+
+.appLogin__textField {
+  margin-top: 20px;
+}
+
+.appLogin__appBackground {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.appLogin__mobileApp > p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.appLogin__webApp > p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.appLogin__loginUsing {
+  margin-top: 50px;
+}
+
+.appLogin__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appLogin__continue {
+  background: #ededf0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

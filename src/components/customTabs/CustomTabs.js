@@ -56,6 +56,15 @@ export default function SimpleTabs({ CustomizeAppSec, ReviewSec, PublishSec }) {
     setValue(newValue);
   };
 
+  // const renderHead = () => {
+  //   return (
+  //     <div>
+  //       <p>1</p>
+  //       <p>Customize App</p>
+  //     </div>
+  //   );
+  // };
+
   return (
     <div className={classes.root}>
       <AppBar
@@ -70,7 +79,7 @@ export default function SimpleTabs({ CustomizeAppSec, ReviewSec, PublishSec }) {
         >
           <Tab
             style={{ textTransform: "none", color: "#2264D1" }}
-            label="1. Customize App"
+            label={"1. Customize App"}
             {...a11yProps(0)}
           />
           <Tab
