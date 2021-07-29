@@ -1,13 +1,13 @@
-import { CREATE } from "../constants/actionTypes";
+import { TOGGLE_PAGETIP } from "../constants/actionTypes";
 
 const initState = {
-  test: ["Test"],
+  showPageTip: false,
 };
 
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
-    case "CREATE":
-      return { test: initState.test.push(action.payload) };
+    case TOGGLE_PAGETIP:
+      return { showPageTip: action.payload };
     default:
       return state;
   }

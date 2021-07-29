@@ -28,6 +28,7 @@ const PageTipsAccordion = ({ title, data = [], expanded }) => {
     },
     section: {
       padding: 10,
+      marginLeft: 16,
     },
     text: {
       fontSize: 12,

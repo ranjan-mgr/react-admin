@@ -3,10 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/swiper-bundle.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { useSelector } from "react-redux";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
+  const sidebarIsOpen = useSelector((state) => state.admin.ui.sidebarOpen);
+  const showPageTip = useSelector((state) => state.data.showPageTip);
   const styles = {
     swiper: {
       background: "#D9D9E6",
@@ -17,7 +20,7 @@ const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
     },
     images: {
       textAlign: "center",
-      height: 250,
+      height: 230,
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -35,8 +38,8 @@ const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         style={{
-          width: 600,
-          height: 260,
+          width: sidebarIsOpen ? 500 : showPageTip ? 600 : 700,
+          height: 220,
           padding: 20,
           display: "flex",
         }}

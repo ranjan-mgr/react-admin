@@ -11,6 +11,8 @@ import {
 } from "../../../assets/icons/icon";
 import Accordion from "../../../components/customAccordion/PageTipsAccordion";
 import { useToasts } from "react-toast-notifications";
+import { useSelector, useDispatch } from "react-redux";
+import { TOGGLE_PAGETIP } from "../../../constants/actionTypes";
 
 const mobileAppData = [
   "Select app base version",
@@ -24,11 +26,12 @@ const mobileAppData = [
 ];
 
 const PassengerApp = () => {
-  const [pageTip, setPageTip] = useState(false);
+  const pageTip = useSelector((state) => state.data.showPageTip);
+  const dispatch = useDispatch();
   const { addToast } = useToasts();
 
   const onClickPageTip = () => {
-    setPageTip(!pageTip);
+    dispatch({ type: TOGGLE_PAGETIP, payload: !pageTip });
     // addToast("Failed to load", { appearance: "success" });
   };
 
