@@ -27,12 +27,14 @@ const mobileAppData = [
 
 const PassengerApp = () => {
   const pageTip = useSelector((state) => state.data.showPageTip);
+  const store = useSelector((state) => state);
   const dispatch = useDispatch();
   const { addToast } = useToasts();
 
   const onClickPageTip = () => {
     dispatch({ type: TOGGLE_PAGETIP, payload: !pageTip });
     // addToast("Failed to load", { appearance: "success" });
+    console.log("store", store);
   };
 
   return (

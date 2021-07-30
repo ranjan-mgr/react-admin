@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/AppLogin.css";
 import ImgPicker from "../../../../components/customPicker";
 import TextInput from "../../../../components/customTextInput";
@@ -11,6 +11,48 @@ const AppLogin = () => {
   const [iosIcon, setIosIcon] = useState("");
   const [mobileBackground, setMobileBackground] = useState("");
   const [webBackground, setWebBackground] = useState("");
+  const [state, setState] = useState({
+    checkedGoogle: false,
+    checkedFacebook: false,
+    checkediOS: false,
+    checkedUserId: false,
+  });
+  const [enableAll, setEnableAll] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleChange = (event) => {
+    // console.log("event", event.target.name, state);
+    setState({ ...state, [event.target.name]: event.target.checked });
+
+    if (!event.target.checked) {
+      setEnableAll(false);
+    }
+  };
+
+  const handleChangeEnableAll = (event) => {
+    setEnableAll(!enableAll);
+
+    if (event.target.checked) {
+      const selectAll = {
+        checkedGoogle: true,
+        checkedFacebook: true,
+        checkediOS: true,
+        checkedUserId: true,
+      };
+      setState(selectAll);
+    } else {
+      const disableAll = {
+        checkedGoogle: false,
+        checkedFacebook: false,
+        checkediOS: false,
+        checkedUserId: false,
+      };
+      setState(disableAll);
+    }
+  };
 
   const imageHandler = (e, value) => {
     const reader = new FileReader();
@@ -158,41 +200,47 @@ const AppLogin = () => {
       <div className="appLogin__loginUsing">
         <div className="appLogin__options">
           <p>Allow users to login using</p>
-          <Switch label="Enable All" />
+          <Switch
+            label="Enable All"
+            handleChange={handleChangeEnableAll}
+            checked={enableAll}
+            name="enableAll"
+          />
         </div>
         <div className="appLogin__enableAll">
           <div className="appLogin__option">
-            <Switch label="Google" />
+            <Switch
+              label="Google"
+              handleChange={handleChange}
+              checked={state.checkedGoogle}
+              name="checkedGoogle"
+            />
           </div>
           <div className="appLogin__option">
-            <Switch label="Facebook" />
+            <Switch
+              label="Facebook"
+              handleChange={handleChange}
+              checked={state.checkedFacebook}
+              name="checkedFacebook"
+            />
           </div>
           <div className="appLogin__option">
-            <Switch label="iOS" />
+            <Switch
+              label="iOS"
+              handleChange={handleChange}
+              checked={state.checkediOS}
+              name="checkediOS"
+            />
           </div>
           <div className="appLogin__option">
-            <Switch label="User id and password" />
+            <Switch
+              label="User id and password"
+              handleChange={handleChange}
+              checked={state.checkedUserId}
+              name="checkedUserId"
+            />
           </div>
         </div>
-      </div>
-
-      <div className="appLogin__continue">
-        <Button
-          style={{ textTransform: "none" }}
-          variant="outlined"
-          color="primary"
-          disableElevation
-        >
-          Back
-        </Button>
-        <Button
-          style={{ textTransform: "none", background: "#2979FF" }}
-          variant="contained"
-          color="primary"
-          disableElevation
-        >
-          Continue
-        </Button>
       </div>
     </div>
   );

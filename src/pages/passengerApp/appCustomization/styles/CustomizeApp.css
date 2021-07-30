@@ -1,10 +1,16 @@
 .customizeApp {
+  display: flex;
+  width: 103%;
+}
+
+.customizeApp_main {
   background: #f7f7fa;
   /* padding: 10px; */
   display: flex;
   flex: 1;
   border: 1px solid #e4e4e8;
   border-radius: 8px;
+  flex: 0.8;
 }
 
 .customizeApp__left {
@@ -51,4 +57,21 @@
   background: #2264d1;
   color: #fff;
   border-radius: 5px;
+}
+
+.customizeApp__continue {
+  background: #ededf0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.hideBackBtn {
+  justify-content: flex-end;
+}
+
+.customizeApp__preview {
+  margin: 0px 25px;
+  flex: 0.2;
 }

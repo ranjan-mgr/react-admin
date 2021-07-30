@@ -2,25 +2,33 @@ import React from "react";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-const CustomSwitch = ({ label }) => {
-  const [state, setState] = React.useState({
-    checkedA: false,
-  });
+const CustomSwitch = ({ label, checked, handleChange, name }) => {
+  // const [state, setState] = React.useState({
+  //   checkedA: false,
+  // });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // };
   return (
     <FormControlLabel
       control={
         <Switch
-          checked={state.checkedA}
+          checked={checked}
           onChange={handleChange}
-          name="checkedA"
+          name={name}
           inputProps={{ "aria-label": "secondary checkbox" }}
+          // color="secondary"
         />
       }
       label={label}
+      style={{
+        background: checked ? "#EBF2FF" : null,
+        paddingRight: 15,
+        borderRadius: 20,
+        marginTop: 10,
+        color: "#0C2146",
+      }}
     />
   );
 };

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ChooseBaseTheme.css";
 import CheckBox from "../../../../components/customCheckbox";
 import Select from "../../../../components/customDropdown";
 import { LinkIcon } from "../../../../assets/icons/icon";
 import Swiper from "../../../../components/customSwiper";
-import Button from "@material-ui/core/Button";
+import { useToasts } from "react-toast-notifications";
+import { useSelector, useDispatch } from "react-redux";
+import { SHOW_SCREEN } from "../../../../constants/actionTypes";
 
 const optionsAndroid = [
   { value: "Android v1.2.0", label: "Android v1.2.0" },
@@ -49,6 +51,13 @@ const ChooseBaseTheme = () => {
   const [checkedAndroid, setCheckedAndroid] = useState(false);
   const [checkedIos, setCheckedIos] = useState(false);
   const [checkedWeb, setCheckedWeb] = useState(false);
+  const { addToast } = useToasts();
+  const showScreen = useSelector((state) => state.data.showScreen);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (selectedOption) => {
     if (selectedOption.value.charAt(0) === "A") {
@@ -145,17 +154,6 @@ const ChooseBaseTheme = () => {
       {renderPage("android")}
       {renderPage("ios")}
       {renderPage("web")}
-
-      <div className="baseTheme__continue">
-        <Button
-          style={{ textTransform: "none", background: "#2979FF" }}
-          variant="contained"
-          color="primary"
-          disableElevation
-        >
-          Continue
-        </Button>
-      </div>
     </div>
   );
 };

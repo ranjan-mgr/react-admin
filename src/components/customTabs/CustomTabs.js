@@ -83,13 +83,13 @@ export default function SimpleTabs({ CustomizeAppSec, ReviewSec, PublishSec }) {
             {...a11yProps(0)}
           />
           <Tab
-            // disabled
+            disabled
             style={{ textTransform: "none", color: "#2264D1" }}
             label="2. Review & Confirm"
             {...a11yProps(1)}
           />
           <Tab
-            // disabled
+            disabled
             style={{ textTransform: "none", color: "#2264D1" }}
             label="3. Publish to Download"
             {...a11yProps(2)}

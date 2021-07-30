@@ -8,13 +8,14 @@
 
 .appLogin__head {
   font-size: 16px;
-  font-weight: 500;
+  color: #19191d;
+  /* font-weight: 800; */
   letter-spacing: 0.022em;
 }
 
 .appLogin__text {
   font-size: 12px;
-  color: #787885;
+  color: #5a5b6a;
   margin-top: 5px;
 }
 
@@ -79,6 +80,13 @@
 .appLogin__options {
   display: flex;
   justify-content: space-between;
+}
+
+.appLogin__options > p {
+  font-size: 16px;
+  /* font-weight: 800; */
+  letter-spacing: 0.022em;
+  color: #19191d;
 }
 
 .appLogin__continue {

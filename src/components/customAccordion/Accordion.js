@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { UpArrowIcon, DownArrowIcon } from "../../assets/icons/icon";
 
-const Accordion = ({ title, onClickOptions, data }) => {
-  const [toggle, setToggle] = useState(true);
+const Accordion = ({ title, onClickOptions, data, expanded }) => {
+  const [toggle, setToggle] = useState(expanded);
 
   return (
     <div className="customizeApp__expand">

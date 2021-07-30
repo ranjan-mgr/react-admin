@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/swiper-bundle.css";
@@ -8,8 +8,16 @@ import { useSelector } from "react-redux";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
+  const [loader, setLoader] = useState(true);
   const sidebarIsOpen = useSelector((state) => state.admin.ui.sidebarOpen);
   const showPageTip = useSelector((state) => state.data.showPageTip);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoader(false);
+  //   }, 5000);
+  // }, []);
+
   const styles = {
     swiper: {
       background: "#D9D9E6",
@@ -26,7 +34,7 @@ const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
       alignItems: "center",
     },
   };
-
+  // console.log("Load", loader);
   return (
     <div>
       <Swiper
@@ -38,7 +46,7 @@ const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         style={{
-          width: sidebarIsOpen ? 500 : showPageTip ? 600 : 700,
+          width: sidebarIsOpen ? 500 : showPageTip ? 600 : 600,
           height: 220,
           padding: 20,
           display: "flex",
@@ -50,6 +58,16 @@ const CustomSwiper = ({ screenPrev = [], value, selectedOption }) => {
               {selectedOption !== "" ? (
                 <CircularProgress size={20} style={{ color: "#3A3A44" }} />
               ) : (
+                // <img
+                //   style={{
+                //     width: 105,
+                //     height: 215,
+                //     borderRadius: 10,
+                //     marginBottom: 12,
+                //   }}
+                //   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGvMWVT0sVxx8quEhYoKPaBAF2ovmlgcvi_w&usqp=CAU"
+                //   alt=""
+                // />
                 ""
               )}
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomToast = ({ appearance, children }) => {
+const CustomToast = ({ appearance, children, showButton }) => {
   const styles = {
     button: {
       background: "#3A3A44",
@@ -12,7 +12,7 @@ const CustomToast = ({ appearance, children }) => {
       marginLeft: 10,
     },
   };
-
+  console.log("Hide button", showButton);
   return (
     <div
       style={{
@@ -24,7 +24,7 @@ const CustomToast = ({ appearance, children }) => {
     >
       {children}
 
-      <button style={styles.button}>Retry</button>
+      {showButton ? <button style={styles.button}>Retry</button> : null}
     </div>
   );
 };
