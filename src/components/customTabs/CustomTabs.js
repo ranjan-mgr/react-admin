@@ -56,14 +56,23 @@ export default function SimpleTabs({ CustomizeAppSec, ReviewSec, PublishSec }) {
     setValue(newValue);
   };
 
-  // const renderHead = () => {
-  //   return (
-  //     <div>
-  //       <p>1</p>
-  //       <p>Customize App</p>
-  //     </div>
-  //   );
-  // };
+  const styles = {
+    tabNumber: {
+      background: "#EBF2FF",
+      padding: 5,
+      borderRadius: "50%",
+      width: 12,
+      height: 12,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginRight: 5,
+    },
+    tabSection: {
+      display: "flex",
+      alignItems: "center",
+    },
+  };
 
   return (
     <div className={classes.root}>
@@ -79,19 +88,31 @@ export default function SimpleTabs({ CustomizeAppSec, ReviewSec, PublishSec }) {
         >
           <Tab
             style={{ textTransform: "none", color: "#2264D1" }}
-            label={"1. Customize App"}
+            label={
+              <div style={styles.tabSection}>
+                <p style={styles.tabNumber}>1</p> Customize App
+              </div>
+            }
             {...a11yProps(0)}
           />
           <Tab
             disabled
             style={{ textTransform: "none", color: "#2264D1" }}
-            label="2. Review & Confirm"
+            label={
+              <div style={styles.tabSection}>
+                <p style={styles.tabNumber}>2</p> Review & Confirm
+              </div>
+            }
             {...a11yProps(1)}
           />
           <Tab
             disabled
             style={{ textTransform: "none", color: "#2264D1" }}
-            label="3. Publish to Download"
+            label={
+              <div style={styles.tabSection}>
+                <p style={styles.tabNumber}>3</p> Publish to Download
+              </div>
+            }
             {...a11yProps(2)}
           />
         </Tabs>

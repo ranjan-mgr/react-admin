@@ -1,8 +1,9 @@
 import { TOGGLE_PAGETIP, SHOW_SCREEN } from "../constants/actionTypes";
+import { customizeApp } from "../constants/displayConstants";
 
 const initState = {
   showPageTip: false,
-  showScreen: "Choose Base Theme",
+  showScreen: customizeApp.CHOOSE_BASE_THEME,
 };
 
 const rootReducer = (state = initState, action) => {

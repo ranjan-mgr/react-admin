@@ -127,17 +127,17 @@ export const navOptions = [
       {
         icon: PassengerAppIcon,
         name: "Passenger App",
-        route: "/passenger-home",
+        route: "/passenger-app",
       },
       {
         icon: DriverAppIcon,
         name: "Driver App",
-        route: "/driver-home",
+        route: "/driver-app",
       },
       {
         icon: InspectorAppIcon,
         name: "Inspector App",
-        route: "/inspector-home",
+        route: "/inspector-app",
       },
     ],
   },

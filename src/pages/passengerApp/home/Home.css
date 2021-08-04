@@ -115,3 +115,9 @@
   align-items: center;
   padding-bottom: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  .home__options {
+    flex-direction: column;
+  }
+}

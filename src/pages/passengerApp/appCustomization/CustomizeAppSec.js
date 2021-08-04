@@ -10,43 +10,44 @@ import { useSelector, useDispatch } from "react-redux";
 import { SHOW_SCREEN } from "../../../constants/actionTypes";
 import Button from "@material-ui/core/Button";
 import Preview from "../../../components/preview";
+import { customizeApp } from "../../../constants/displayConstants";
 
 const designSettings = [
   {
-    value: "Choose Base Theme",
+    value: customizeApp.CHOOSE_BASE_THEME,
     show: true,
   },
   {
-    value: "Login",
+    value: customizeApp.APP_LOGIN,
     show: false,
   },
   {
-    value: "App Theme",
+    value: customizeApp.APP_THEME,
     show: false,
   },
   {
-    value: "Configure URLs",
+    value: customizeApp.CONFIGURE_URL,
     show: false,
   },
   {
-    value: "Policies & Compliances",
+    value: customizeApp.POLICIES_COMPLIANCES,
     show: false,
   },
 ];
 
 const CustomizeAppSec = () => {
   const [select, setSelect] = useState(designSettings);
-  // const [showScreen, setShowScreen] = useState("Choose Base Theme");
+  // const [showScreen, setShowScreen] = useState(customizeApp.CHOOSE_BASE_THEME);
   const showScreen = useSelector((state) => state.data.showScreen);
   const pageTip = useSelector((state) => state.data.showPageTip);
   const dispatch = useDispatch();
 
   const onClickOptions = (value) => {
-    select[0].show = value === "Choose Base Theme" ? true : false;
-    select[1].show = value === "Login" ? true : false;
-    select[2].show = value === "App Theme" ? true : false;
-    select[3].show = value === "Configure URLs" ? true : false;
-    select[4].show = value === "Policies & Compliances" ? true : false;
+    select[0].show = value === customizeApp.CHOOSE_BASE_THEME ? true : false;
+    select[1].show = value === customizeApp.APP_LOGIN ? true : false;
+    select[2].show = value === customizeApp.APP_THEME ? true : false;
+    select[3].show = value === customizeApp.CONFIGURE_URL ? true : false;
+    select[4].show = value === customizeApp.POLICIES_COMPLIANCES ? true : false;
 
     setSelect([...select]);
     // setShowScreen(value);
@@ -54,40 +55,40 @@ const CustomizeAppSec = () => {
   };
 
   const onClickBack = () => {
-    if (showScreen === "Policies & Compliances") {
-      onClickOptions("Configure URLs");
-    } else if (showScreen === "Configure URLs") {
-      onClickOptions("App Theme");
-    } else if (showScreen === "App Theme") {
-      onClickOptions("Login");
-    } else if (showScreen === "Login") {
-      onClickOptions("Choose Base Theme");
+    if (showScreen === customizeApp.POLICIES_COMPLIANCES) {
+      onClickOptions(customizeApp.CONFIGURE_URL);
+    } else if (showScreen === customizeApp.CONFIGURE_URL) {
+      onClickOptions(customizeApp.APP_THEME);
+    } else if (showScreen === customizeApp.APP_THEME) {
+      onClickOptions(customizeApp.APP_LOGIN);
+    } else if (showScreen === customizeApp.APP_LOGIN) {
+      onClickOptions(customizeApp.CHOOSE_BASE_THEME);
     }
   };
 
   const onClickContinue = () => {
-    if (showScreen === "Choose Base Theme") {
-      onClickOptions("Login");
-    } else if (showScreen === "Login") {
-      onClickOptions("App Theme");
-    } else if (showScreen === "App Theme") {
-      onClickOptions("Configure URLs");
-    } else if (showScreen === "Configure URLs") {
-      onClickOptions("Policies & Compliances");
+    if (showScreen === customizeApp.CHOOSE_BASE_THEME) {
+      onClickOptions(customizeApp.APP_LOGIN);
+    } else if (showScreen === customizeApp.APP_LOGIN) {
+      onClickOptions(customizeApp.APP_THEME);
+    } else if (showScreen === customizeApp.APP_THEME) {
+      onClickOptions(customizeApp.CONFIGURE_URL);
+    } else if (showScreen === customizeApp.CONFIGURE_URL) {
+      onClickOptions(customizeApp.POLICIES_COMPLIANCES);
     }
   };
 
   const renderScreen = (value) => {
     switch (value) {
-      case "Choose Base Theme":
+      case customizeApp.CHOOSE_BASE_THEME:
         return <ChooseBaseTheme />;
-      case "Login":
+      case customizeApp.APP_LOGIN:
         return <AppLogin />;
-      case "App Theme":
+      case customizeApp.APP_THEME:
         return <AppTheme />;
-      case "Configure URLs":
+      case customizeApp.CONFIGURE_URL:
         return <ConfigureURLs />;
-      case "Policies & Compliances":
+      case customizeApp.POLICIES_COMPLIANCES:
         return <Policies />;
       default:
         return null;
@@ -99,7 +100,7 @@ const CustomizeAppSec = () => {
       <div
         className="customizeApp_main"
         style={{
-          flex: pageTip && showScreen === "Choose Base Theme" ? 0.97 : null,
+          marginRight: pageTip ? 25 : 0,
         }}
       >
         <div className="customizeApp__left">
@@ -122,12 +123,16 @@ const CustomizeAppSec = () => {
           {renderScreen(showScreen)}
           <div
             className={`customizeApp__continue ${
-              showScreen === "Choose Base Theme" && "hideBackBtn"
+              showScreen === customizeApp.CHOOSE_BASE_THEME && "hideBackBtn"
             }`}
           >
-            {showScreen !== "Choose Base Theme" ? (
+            {showScreen !== customizeApp.CHOOSE_BASE_THEME ? (
               <Button
-                style={{ textTransform: "none" }}
+                style={{
+                  textTransform: "none",
+                  color: "#2979FF",
+                  border: "1px solid #2979FF",
+                }}
                 variant="outlined"
                 color="primary"
                 disableElevation
@@ -149,9 +154,9 @@ const CustomizeAppSec = () => {
           </div>
         </div>
       </div>
-      {!pageTip && showScreen !== "Choose Base Theme" ? (
+      {!pageTip && showScreen !== customizeApp.CHOOSE_BASE_THEME ? (
         <div className="customizeApp__preview">
-          <Preview />
+          <Preview showScreen={showScreen} />
         </div>
       ) : null}
     </div>

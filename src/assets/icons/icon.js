@@ -622,3 +622,22 @@ export const RemoveIcon = () => {
     </svg>
   );
 };
+
+export const NotificationIcon = () => {
+  return (
+    <svg
+      width="16"
+      height="20"
+      viewBox="0 0 16 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.9 20 8 20ZM15 15C14.45 15 14 14.55 14 14V8C14 5.39 12.33 3.19 10 2.37V2C10 0.9 9.1 0 8 0C6.9 0 6 0.9 6 2V2.37C3.67 3.19 2 5.39 2 8V14C2 14.55 1.55 15 1 15C0.45 15 0 15.45 0 16C0 16.55 0.45 17 1 17H15C15.55 17 16 16.55 16 16C16 15.45 15.55 15 15 15Z"
+        fill="#4A4B57"
+      />
+    </svg>
+  );
+};

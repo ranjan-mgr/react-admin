@@ -58,6 +58,7 @@ const AppLogin = () => {
     const reader = new FileReader();
 
     reader.onload = () => {
+      console.log("Reader", reader, e.target.files);
       if (reader.readyState === 2) {
         if (value === "Brand") {
           setBrandIcon(reader.result);

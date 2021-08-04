@@ -1,6 +1,9 @@
 import React, { forwardRef } from "react";
 import { AppBar, UserMenu, MenuItemLink } from "react-admin";
 import "./AppBar.styles.css";
+import { NotificationIcon } from "../../../assets/icons/icon";
+import IconButton from "@material-ui/core/IconButton";
+import Badge from "@material-ui/core/Badge";
 
 const ConfigurationMenu = forwardRef((props, ref) => {
   return (
@@ -26,15 +29,19 @@ const CustomAppBar = (props) => {
     <AppBar
       className="appBar"
       {...props}
-      color="#fff"
+      color="inherit"
       elevation={1}
-      // userMenu={<CustomUserMenu />}
+      // userMenu={<div></div>}
     >
       <div className="appBar__left">
         <p>Trip Fleet Admin</p>
       </div>
       <div className="appBar__right">
-        <p>Ranjan Moger</p>
+        <IconButton>
+          <Badge badgeContent={0} color="secondary">
+            <NotificationIcon />
+          </Badge>
+        </IconButton>
       </div>
     </AppBar>
   );

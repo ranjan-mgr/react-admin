@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import RootReducers from "./rootReducer";
-import { createHashHistory } from "history";
+import { createHashHistory, createBrowserHistory } from "history";
 import { connectRouter } from "connected-react-router";
 import { adminReducer } from "react-admin";
 
-const history = createHashHistory();
+const history = createBrowserHistory();
 
 export default combineReducers({
   admin: adminReducer,
